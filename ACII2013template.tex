@@ -1,0 +1,704 @@
+
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[conference]{IEEEtran}
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{Functional Connectivity from EEG Signal during Perceiving Pleasant and Unpleasant Odours }
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{
+\IEEEauthorblockN{He Xu}
+\IEEEauthorblockA{Multimedia Signal Processing\\ Group, EPFL\\
+Lausanne, Switzerland\\
+he.xu@epfl.ch}
+
+\and
+
+\IEEEauthorblockN{Eleni Kroupi}
+\IEEEauthorblockA{Applied Signal Processing\\ Group, EPFL\\
+Lausanne, Switzerland\\
+eleni.kroupi@epfl.ch}
+
+\and
+
+\IEEEauthorblockN{Touradj Ebrahimi}
+\IEEEauthorblockA{Multimedia Signal Processing\\ Group, EPFL\\
+Lausanne, Switzerland\\
+touradj.ebrahimi@epfl.ch}
+}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+%\boldmath
+The perception of olfactory is strongly related with emotion generations. Studies on the effects of odour perception from brain activity have been conducted by using different neuro-imaging techniques. 
+In this paper, we analyse electroencephalography (EEG) of 23 subjects during perceiving pleasant and unpleasant odour stimuli. We describe the construction of brain functional connectivity networks measured by most commonly used models. We discuss the network-based features of functional connectivity, as well as design classifiers by applying different functional connectivity network features. Finally, we show the classification of EEG signals during perception of pleasant and unpleasant odours can be achieved at relatively high accuracy. 
+\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the conference you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals/conferences frown on
+% math in the abstract anyway.
+
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+% no \IEEEPARstart
+%% Olfactory perception description
+
+%% Previous work on olfactory perception
+
+%% Previous work on emotion-related olfactory perception
+
+%% Paper structure
+
+
+%\hfill mds
+ 
+%\hfill January 11, 2007
+
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating table. Note that, for IEEE style tables, the 
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals/conferences use top floats
+% exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the \fnbelowfloat
+% command of the stfloats package.
+
+\section{Materials and Methods}
+
+\subsection{Participants}
+A total of 23 right-handed subjects took part in the experiment (9 females, 14 males, $24 \pm 4.6$ years old). All subjects are non-smokers and without respiration problems. According to their self-reports, none had a history of injury in the olfactory bulb or incapability of smelling. Subjects were informed about the experimental protocol and the purpose of the study. During the experiment, subjects were seated in a comfortable chair with recording devices. None of the participants in experiment were wearing perfumed products on the day of experiment. A payback of 50CHF was offered to each subject after the experiment. 
+
+\subsection{Experimental Setup}
+An EGI's Geodesic EEG system (GES) 300 was used to record, amplify and digitalize the EEG signals. EEG signals were recorded from a 256-channel EEG Net Amps 300 cap with sampling frequency of 250Hz.  
+\subsection{Experimental Protocol}
+10 different odours were provided for the experiment, including rose water, lavender oil, jasmine oil, chocolate powder, mint oil, valerian pills, garlic powder, star anise, rotten cooked cauliflower and baby shampoo. The odorants were placed inside covered bottles so as to avoid effects of their visual characteristics.  
+
+Subjects were asked to close their eyes and breath normally while the experimenter was moving bottles with different odorants towards them to smell. Subjects were not informed of the name of the odour during experiment. The experiment consisted of four runs. During each run, after a "smell" command, the experimenter was randomly coosing a bottle with an odor to place it under the subject's nose (1-2 cm under both nostrils) and keep it there for about 10 seconds, constituting a single trial. This process was repeated 15 times with the same odour resulting in 15 single trials. This repetition was carefully in done to ensure that sufficient number of single trials will be created for further data analysis. The time between two single trials of the same odour was set to 10 seconds in order to avoid adaptation and subject's fatigue. After one run was performed, the subjects were given two minutes break in order to forget the odour (to avoid masking effect) and in order for the odour to be evacuated. During this break, the subjects were asked to rate the odour in terms of pleasantness, in a scale from 0 to 10, ranging from extremely unpleasant to extremely pleasant for pleasantness. After this break another odour was randomly selected and the same procedure was repeated until all 10 odours were presented.    
+
+\subsection{Pre-processing of EEG Signals}
+After the pre-cleaning and synchronisation of recorded EEG signals by GES-300 system, a total of 12 seconds EEG segment is kept for each trial. It contains 6 seconds of baseline (resting state) and 6 seconds of active (odour perception). Signals from 40 electrodes which are placed on face muscles and around eyes are rejected in order to reduce muscle and eye movement artifacts. Signals from the remaining 216 electrodes are kept for further analysis. 
+
+A bandpass filter (4th order butterworth) is applied for the EEG signals with pass-band 0-50Hz. Small laplacian filter is applied for each electrode in order to reduce volume conduction effects~\cite{wolters2007volume}. Eye-movement artifacts are rejected manually by using Independent Component Analysis (funcitons are provided by EEGLAB\copyright~ toolbox~\cite{luck2014introduction}). 
+
+\subsection{Construction of Brain Networks}
+Brain connectivity refers to a patter of anatomical links ("anatomical connectivity") or of statistical dependencies (functional connectivity) between neural assemblies. The connectivity pattern is formed by structural links such as synapses or represented by statistical or calsal relationships measured as cross-correlation, coherence or information flow~\cite{sporns2007brain}. Brain connectivity is a crucial concept to elucidate how neural networks process information. In this paper, we focus on the study of functional connectivity and utilise this kind of connectivity to interpret how brain functions during the perception of pleasant and unpleasant odours. 
+
+A neurophysiological concept of functional connectivity is introduced by A.A Fingelkurts~\cite{fingelkurts2005functional}, which uses the notion of neural assemblies, as well as local and remote level of descriptions. According to Fingelkurts' concept, functional connectivity is described as the mechanism for the coordination of activity between different neural assemblies in order to achieve a complex cognitive task or perceptual process. However, different interpretations and approaches for estimating brain functional connectivity have been proposed by several groups. We are inspired by the work of Wendling's group, who utilised the Nonlinear Regression Analysis as a measure of functional connectivity~\cite{bettus2008enhanced}. Another notion of Granger Causality~\cite{roebroeck2005mapping} is also applied in functional connectivity estimation in order to be compared with the Nonlinear Regression Analysis method. 
+\subsubsection{Granger Causality}
+Granger causality is first proposed by C.W.J. Granger in investigating causal relations in econometric models in 1969~\cite{granger1969investigating}. Decades later this concept is introduced into the neurophysiology study. It is used to measure the causality between activities in different neuron assemblies, which estimates the functional connectivity over brain regions. 
+
+Let $U_t$ denote all the information accumulated in the universe since time $t-1$, and $U_t-Y_t$ denotes all this information apart from the specified series $Y_t$. $\sigma^2(X|U)$ is the variance of $\epsilon_t(X|U)$, in which $\epsilon_t(X|U)=X_t-P_t(X|U)$ and $P_t(X|U)$ represents the optimum, unbiased, least-squares predictor of $X$ using the set of values $U$.
+
+\emph{Definition of Causality}: If $\sigma^2(X|U)<\sigma^2(X|\overline{U-Y})$, we say that Y is causing X, denoted by $Y_t \Rightarrow X_t$. We say that $Y_t$ is causing $X_t$ if we are better able to predict $X_t$ using all available information than if the information apart from $Y_t$ had been used.
+
+The definition of causality can be explained as: suppose we have two signals from jointly distributed vector-valued stochastic processes: $\mathbf{X}=\mathbf{X_1}, \mathbf{X_2},...$, and $\mathbf{Y}=\mathbf{Y_1}, \mathbf{Y_2},...$. $\mathbf{Y}$ does not Granger-cause $\mathbf{X}$ if and only if $\mathbf{X}$ is conditional on its own past and independent from the past of $\mathbf{Y}$. Conversely, if the past of $\mathbf{Y}$ contribute the the future of $\mathbf{X}$ together as the past of $\mathbf{X}$ does, then $\mathbf{Y}$ Granger-causes $\mathbf{X}$. The definition of Granger causality invite an information-theoretic approach which is difficult to implement because of lack of the knowledge of theoretical distributions of the information-theoretic estimators. In order to solve this problem, different approaches for computing Granger causality are developed and we use a Vector Auto-Regression model (VAR)~\cite{barnett2014mvgc} to estimate Granger causality over 216-channel dataset in this paper.
+
+To estimate the Granger causality between two EEG channels, we suppose the two channels' signals are $\mathbf{X_t}$ and $\mathbf{Y_t}$ where:
+\begin{equation}
+\mathbf{U_t} =  \begin{pmatrix}
+                  \mathbf{X_t}\\
+                  \mathbf{Y_t}
+                \end{pmatrix} = \sum_{k=1}^{p} \begin{pmatrix}
+                                                  A_{xx,k} & A_{xy,k}\\
+                                                  A_{yx,k} & A_{yy,k}
+                                                \end{pmatrix} \begin{pmatrix}
+                                                              \mathbf{X_{t-k}}\\
+                                                              \mathbf{Y_{t-k}}
+                                                                    \end{pmatrix} + \begin{pmatrix}
+                                                                                      \mathbf{\epsilon_{x,t}}\\
+                                                                                      \mathbf{\epsilon_{y,t}}
+                                                                                    \end{pmatrix}
+\end{equation}
+\\
+And we can get the other parameter residuals covariance matrix $\Sigma$ as
+\begin{equation}
+\Sigma \equiv cov \begin{pmatrix}
+                   \mathbf{\epsilon_{x,t}}\\                                                                             \mathbf{\epsilon_{y,t}}
+                  \end{pmatrix} = \begin{pmatrix}
+                                   \Sigma_{xx} & \Sigma_{xy}\\                                                                           \Sigma_{yx} & \Sigma_{yy}
+                                  \end{pmatrix}
+\end{equation}
+
+In this paper we use the MVGC toolbox~\cite{barnett2014mvgc} to estimate the parameters we need in VAR model. We first estimate the best model order \emph{p} by using AIC (Akaike Information Criterion). The minimum-AIC order is selected by using a regression model of Morf's version of LWR (by Levinson, 1974; Whittle, 1963; Wiggins and Robinson, 1965) algorithm~\cite{morf1978recursive}. Similar to the estimation of model order, the VAR parameters estimation regression model is also LWR. The Granger causality of the two channels from $\mathbf{Y_t}$ to $\mathbf{X_t}$ is defined by the log-likelihood:
+\begin{equation} \label{eq:GC_F}
+F_{\mathbf{Y_t}\rightarrow \mathbf{X_t}} \equiv ln \frac{|\Sigma_{xx}'|}{|\Sigma_{xx}|}
+\end{equation}
+In Equation \ref{eq:GC_F}, $|\Sigma_{xx}'|$ represents the covariance matrix of reduced regression (the regression only contain $\mathbf{X_t}$ and $\mathbf{X_t}$ is predicted by its own past) while $|\Sigma_{xx}|$ represents the covariance matrix of full regression (which contains $\mathbf{Y_t}$ and $\mathbf{X_t}$). So the value of $F$ give the "amount of information" passed from $\mathbf{Y_t}$ to $\mathbf{X_t}$ by quantifying the reduction in prediction error when data from channel $\mathbf{Y_t}$ is introduced in the explanation of data from channel $\mathbf{X_t}$. The worst case occurs when there is no information transmitted from $\mathbf{Y_t}$ to $\mathbf{X_t}$ when $|\Sigma_{xx}'|=|\Sigma_{xx}|$, in this case $F=0$. There is no upper limits on the value of $F$.
+
+\subsubsection{Nonlinear Regression Analysis}
+Nonlinear regression analysis is also a commonly used way to estimate the functional connectivity, which is represented by statistical coupling between EEG signals. This method is introduced by Pijin and Lopes Da Silva for EEG analysis~\cite{pijn1990localization}. Nonlinear regression analysis can quantify the relationships between different EEG signals in order to determine whether activity in one neuron assembly depends on that of other assemblies.
+
+Suppose we have two channels of EEG signals $x$ and $y$, nonlinear regression analysis provides a measure called \emph{correlation ratio} $\eta^2$, whose estimator is called $h^2$. $\eta^2$ (or $h^2$) gives a statistical measure that describes the dependency of signal $x$ on $y$. Assume the amplitude of signal $y$ is a function of the amplitude of signal $x$. The expectation of $y$ given a value of $x$ is denoted as $\mu_{y|x}$ where:
+\begin{equation} \label{eq:regressioncurve}
+\mu_{y|x} = \int_{-\infty}^{\infty} y p(y|x) \mathrm{d}y
+\end{equation}
+$\mu_{y|x}$ describes the predicted value of $y$ given $x$. By this definition, we can calculate $\eta^2$, which represents the reduction of variance of $y$ that obtained by predicting $y$ value using $\mu_{y|x}$. $\eta^2$ is expressed as:
+\begin{equation} \label{eq:NRAregression}
+\eta^2 = \frac{Total \ Variance - Unexplained \ Variance}{Total \ Variance}
+\end{equation}
+Explained variance is the variance calculated from $y$ according to $\mu_{y|x}$. In this paper, nonlinear regression analysis algorithm is implemented by fieldtrip toolbox\copyright.
+
+\subsection{Significance Check}
+The significance check runs for the same processes for both methods (Grancer causality and Nonlinear Regression Analysis) and is split into two main parts: (1) p-value calculation for samples based on theoretical asymptotic null distribution; (2) statistical significance adjusted for \emph{Bonfferroni} correction.
+
+The \emph{null hypothesis} $H_0$ is set to "there is no functional connectivity between two channels". The final conclusion after the test is given in terms of the \emph{null hypothesis}, i.e. we either \emph{reject $H_0$} or \emph{do not reject $H_0$}. In this paper, we assume that the connectivity values come from normal distribution with known mean and standard deviation and set the $p-value$ to 0.05 for testing threshold. We used $F$ test for estimating $p-value$ for functional connectivity maps estimated from Granger Causality and Nonlinear Regression Analysis models because $F$ test is commonly used to compare between two models and test which model is statistically better from another.
+
+\subsection{Network Feature Extraction}
+The functional connectivity maps gives us a view of how channels communicate information with each other, thus we can consider this map as a kins of network. In this case, we can apply network features to analyse our functional connectivity maps. Different view of treating brain networks has been proposed by different groups. Some research group see the brain network as a kind of scale-free network~\cite{eguiluz2005scale} while some others view it as a small-world network~\cite{bassett2006small}. In this section, we introduced two categories of network features, according to both scale-free network and small-world network, used in this paper -- \emph{physical statistics} feature for scale-free network and \emph{graph theory-based} feature for small-world network.
+
+\subsubsection{Small-World Network Features}
+A small-world network is a kind of network with its nodes are not neighbours of one another but most of them can be reached from every others by a small number of steps. The brain is considered as a small-world network~\cite{bassett2006small} because of the  following three reasons.
+
+(a) The brain is a complex network on multiple spatial and time scales. Since small-world network properties occurs in many other complex networks over a wide range of physical scales, we can also consider brain as a small-world network.
+
+(b) The brain supports both segregated and distributed information processing. Small-world topology can comprise both high clustering (segregated processing) and short path length (distributed processing).
+
+(c) The brain likely evolved to maximise efficiency and minimise the costs of information processing. Small-world topology can operate dynamically in a critical state, facilitating rapid adaptive reconfiguration of neuronal assemblies in support of changing cognitive states.
+
+Different aspects of small-world network has been studied and here, based on the commonly used features in neural network studies, we introduce four features for analysing our functional connectivity maps which are \emph{characteristic path}, \emph{global efficiency}, \emph{local efficiency} and \emph{clustering coefficient}~\cite{watts1998collective}~\cite{latora2001efficient}.
+
+Characteristic path represents the averaged shortest path over the network, which will reach its minimum value when the network is a complete graph (every pair of distinct vertices is connected by a unique edge). In our case, we can interpret the characteristic path as a feature presenting the number of connections in the functional connectivity networks. The more connections exist in the functional connectivity network, the smaller value of characteristic path length is, thus the faster information can be transferred through the network. The concept of global efficiency of a small-world network is introduced by Latora and Marchiori~\cite{latora2001efficient}, provides a measure of efficient behaviour of the network by assuming that the network system is parallel (every vertex sends information concurrently through its edges in the network). It shows that with shorter characteristic path of each connection, the global efficiency of the network will be higher. It measures how efficiently the vertices exchange information through the network concurrently. With the definition of global efficiency, we can also give the definition of local efficiency by measuring the averaged efficiency of the sub-graphs \textbf{$G_i$} of the neighbours of vertex $i$ in the graph. Since the sub-graphs \textbf{$G_i$} do not contain vertex $i$, it can show how efficient the communication is when $i$ is removed from the network. Thus the local efficiency $E_{loc}$ reveals how much the network is fault tolerant. Cluster coefficient of a network measures the degree to which vertices in a graph tend to cluster together. The overall level of clustering in a network measurement is given by Watts and Strogatz~\cite{watts1998collective} as the average of the local clustering coefficients of all vertices. 
+
+\subsubsection{Scale-Free Network Features}
+Although graph theory has been successfully used to describe brain functional connectivity networks, a few studies have shown that brain functional connectivity can also be considered as a scale-free network. A scale-free network is defined as a network whose degree distribution follows a power law, which is the fraction $P(k)$ of nodes in the network having $k$ connections to other nodes goes for a larger values of $k$ as
+\begin{equation}
+P(k) \sim k^{-\lambda}
+\end{equation}
+where $\lambda$ is a parameter valued in the range $2<\lambda<3$.
+Groups of CJ Stam~\cite{stam2004functional} has found that brain functional connectivity network can be viewed as a scale-free network because the connectivity distribution followed a power-law scaling with an exponent close to 2, which suggests such functional connectivity network can be considered as a scale-free network topoloty\cite{van2008small}, detailed analysing can also be found from Thivierge's work \cite{thivierge2014scale}.
+
+In information theory, \emph{entropy} plays an important role of measuring uncertainty. Recently, following information theoretical and statistical mechanics paradigms, several entropic measures for complexity have been proposed for network structure study and these measures have shown good performance in quantifying the level of organisation encoded in structural features of scale-free networks. It is well known that \emph{Shannon entropy} and \emph{von Neumann entropy} are related to the information present in classical and quantum systems respectively. Both of them can be used to analyse the structural feature of scale-free networks\cite{anand2009entropy}. 
+
+The amount of Shannon entropy has a correlation with the number of network structural constraints. Examples of network constrains include: \emph{fixed number of links per vertex}, \emph{given degree sequence} (a monotonic non-increasing sequence of the degrees of vertices in the graph) and \emph{community structure} (vertices of the network can be easily grouped into sets of vertices such that each set of vertices is densely connected internally). From this point of view, we can conclude that Shannon entropy has a clear interpretation of quantifying the information presented in network structure (Detailed proof can be referred to~\cite{anand2009entropy}). The more constrains a network has, the smaller Shannon entropy it shows. This implies that if a network has a smaller Shannon entropy, it will have more constrains on the network structure, which shows this network is more optimised. Von Neumann entropy is defined by von Neumann for proving the irreversibility of quantum measurement processes at the beginning. Recently it is also shown that von Neumann entropy can also be applied to network analysis~\cite{passerini2008neumann}. It has been shown that von Neumann entropy is a measure of regularity of networks~\cite{passerini2008neumann}. For a fixed number of edges, regular networks (networks whose vertices have the same number of neighbours) have in general a higher von Neumann entropy. It is also shown that von Neumann entropy depends on the number of connected components, long paths and nontrivial symmetries. With a fixed number of edges, von Neumann entropy is smaller for networks with higher degree of cluster. The mathematical proofs can be referred to~\cite{passerini2008neumann} and~\cite{anand2009entropy}.
+
+\section{Classification Results and Discussion}
+We have a total of 23 subjects each with their own out-coming dataset of experiments. We separate these 23 dataset into two main categories -- training set and testing set. Since the number of dataset is relatively small, we will not follow the 80/20 rule of splitting. We will only select 1 dataset for testing and the remaining 22 dataset for training and validation. The separation of training set and validation set follows the \emph{leave-one-out} cross validation rule. With the help of cross-validation, we can avoid over-fitting problem. The testing set is selected in sequence from the 23 dataset and this run will go through all 23 subjects. In other words, we will run the classification routine (selecting best parameters and test classifiers) for each of the 23 subjects and each time test the classifier trained from the other 22 subjects. 
+
+Support vector machine with a \emph{Gaussian radial basis function} kernel is used for classification. The parameter selection of $\sigma$ in RBF kernel is based on cross-validation -- each time we leave 1 dataset from training set out for validating $\sigma$. We tested 13 different values of parameter $\sigma$ ranged from 0.01 to 2. Pleasant trials from training dataset are labelled as 0s while unpleasant trials are labelled as 1s. Cohen's Kappa~\cite{uebersax1987diversity} is calculated to evaluate the classifier's performance. 
+
+Cohen's kappa $\kappa$ is a measure of agreement between two viewers $A$ and $B$. Some researchers considered that Cohen's kappa can be used to evaluate the agreement by chance, i.e. if the viewers are just guessing for a decision. By using Cohen's kappa, we can have a better understanding on whether our classifiers do the classification by guessing randomly without computing the random guessing error rate every time. 
+
+From these kappa values we find that most classifiers' performances are not far away from random decisions ($\kappa$ <0.2 \cite{cohenskappa}). But there are still some features can help the classifier stop making random decisions. We run \emph{Student-t test} on the kappa values for each feature of each network to test the randomness of Kappa results. The t-test shows that only kappa result from Nonlinear Regression Analysis features ($p = 0.0409 < 0.05$, $\kappa$ values with $\mu = 0.0628, median = 0.0573,\sigma = 0.1387$) is significantly not random. If we look inside of each features of 216-channel Nonlinear Regression Analysis functional connectivity maps, we found that  216-channel Nonlinear Regression Analysis weighted feature of \emph{global efficiency} can give the best Kappa result with significance ($p = 0.0043$) of $0.1112 \pm 0.1673$.
+
+Although the significant kappa results have the $p-values$ less than 0.05, some of the $p-value$ are still very close to 0.05, indicating that the results are not that good anyway.The low classification accuracy may due to many reasons: the size of functional connectivity map may play a crucial rule in classification -- with 19-channel functional connectivity maps, there might be too less detail for connections while 216-channel functional connectivity maps may provide too much redundant information in classification. New features of functional connectivity maps should also be proposed. Since we only used network-based features in this paper, other features as power spectral density or time-frequency analysis may also be used for classification. Another improvement for getting better classification results could be done in the experiment design. Based on the experiment protocol and preprocessing of raw EEG signal, 6 seconds of each trial of EEG signal are kept fro investigating the pleasantness from odours. This time duration could be cut shorter (because 6 seconds might be to much for decision making) or extended longer (or because 6 seconds might be not enough to make the decision).
+
+
+\section{Conclusion}
+For years the concept of functional connectivity maps has been used to study the brain activity but not for classification of emotions. In this paper, we studied the concepts of brain functional connectivity and compared different methods of estimating functional connectivity on EEG signals for 23 subjects in order to classify pleasant and unpleasant emotions during odour perception. By considering the maps as networks, physical statistics and graph theory based features are extracted and used for designing SVM classifiers with RBF kernel. The best classification accuracy based on Cohen's Kappa is achieved at $0.11 \pm 0.17$ , which is significantly without random guessing. The results indicates that features estimated from 216-channel Nonlinear Regression Analysis estimated functional connectivity can be used to classify pleasant and unpleasant emotions during odour perception with a higher accuracy.  
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\begin{thebibliography}{1}
+
+\bibitem{IEEEhowto:kopka}
+H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+\end{thebibliography}
+
+
+
+
+% that's all folks
+\end{document}
+
+
