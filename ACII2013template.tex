@@ -545,20 +545,22 @@ In this paper, we analyse electroencephalography (EEG) of 23 subjects during per
 % AFFECTIVE COMPUTING GENERAL IDEA
 
 % PRIMARY RESPONSE TO ODORS, LINKS WITH EMOTIONS AND AFFECTIVE COMPUTING
+Olfactory perception can rise different primary responses in emotions. The rised emotional responses differ significantly between individuals with variations in pleasantness. Different subjects may give different emotional responses to the same odor. The mechanism of the variation between different individuals in perception of odors is still unclear. Different approaches in studying odor perception have been proposed by many groups both in physiological point of view~\cite{galizia2000odour} and genetic point of view~\cite{keller2007genetic}.
 
 % RESEARCHER'S INVESTIGATIONS ON PLEASANTNESS
-
-% PLEASANTNESS IN BRAIN
-
-% RESEARCHES IN PLEASANTNESS IN BRAIN, PET, FMRI, EEG, IMPLY STH HAS TO BE INVESTIGATES
+The causes of pleasantness have been investigated by different researchers through different means. Subjective studies have been conducted on the effects of facial expressions~\cite{lyons1998coding}, food intake\cite{de2003taste}, languages~\cite{bellezza1986words} and etc. Researches on emotion generation and classification by analyzing brain activities, especially through PET~\cite{zatorre2000neural}, fMRI~\cite{kringelbach2003activation} with the contributing of neuroscience, psychology and computer science have been increased significantly over the past decades. EEG approaches in emotion studies are also conducted by different groups to classify the emotional responses of pleasantness.
 
 % PREVIOUS WORKS/PAPERS ON ANALYSIS FROM PSD, BANDS FEATURES
+The emotion status during odor perception still need to be investigated for a better understanding the olfactory perception and emotion generation processes. The current studies on classifying emotional responses to odors based on EEG signals are more focused on extracting features of power spectral density, workload index (WI), permutation entropy, dimension of minimal covers~\cite{kroupi2014eeg}. 
 
 % VALUE OF FUNCTIONAL CONNECTIVITY OF EEG
+Most of the methods that have been proposed and commonly used in EEG-based emotion study are performed directly on EEG signals themselves, while in this thesis we propose to use an indirect method to study about these EEG signals which is called \emph{functional connectivity map}. There are different levels of connectivity inside brain, ranging from the connections between neighbouring neurons to the connections between different segregated brain regions. The concept of functional connectivity describes the dependence between the activities of different neuron assemblies. The functional connectivity map describes the dependency between all the sub-regions of brain (all the electrodes in EEG signals) regardless of whether they are directly linked spatially or not. Functional connectivity map has been largely applied in neuro-imaging analysis (EEG, fMRI, PET and etc) in the study of major depression~\cite{greicius2007resting} and epilepsy~\cite{waites2006functional} to study the brain activity differences during disorder and resting-states. Based on the neurophysiological principle and recent research~\cite{van2010exploring}, brain can be viewed as a complex network. Thus in this thesis, we will introduce this concept of functional connectivity map to help us understand the networking of brain during odour perception.
 
 % OUR METHODS, NO RESULTS
+Since the dependence between different sub-regions of brain can be interpreted in different ways, there exists different models of estimating the functional connectivity map of the brain. Widely used models include \emph{Granger Causality}, \emph{Transfer Entropy}, \emph{Nonlinear Regression Analysis} and \emph{Spectral Coherence}. In this paper, we applied and compared three different models in estimating functional connectivity maps which can also give us a better view of what is happening during the processes of odour perception and emotion generation. 
 
 % STRUCTURE OF THE PAPER
+The rest of the paper is organised as follows: Section II describes the experimental protocols and methods for constructing and measuring functional connectivity maps from EEG signals. Section III provides the classification results on pleasantness by using the network based features extracted from functional connectivity maps. Section IV gives the conclusion of this work. 
 
 
 \section{Materials and Methods}
